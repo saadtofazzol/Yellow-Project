@@ -2,6 +2,7 @@ import React from 'react';
 import { CgShoppingBag } from "react-icons/cg";
 import { CiStop1 } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
+import { NavLink } from 'react-router-dom';
 
 const Navber = () => {
     return (
@@ -47,14 +48,52 @@ const Navber = () => {
 
 
 <div className='flex bg-black text-white  gap-10 justify-center p-5 mt-5'>
-<p>পূজা ১৪৩২</p>
 
-<p>FAIL 2025</p>
+
+
+<NavLink to="/puja">
+    <p>পূজা ১৪৩২</p>
+</NavLink>
+<NavLink to="/fail">
+   <p>FAIL 2025</p>
+</NavLink>
+
+
+<NavLink to="/woman">
 <p>WOMAN</p>
-<p>MAN</p>
-<p>KIDS </p>
-<p>MINI-ME</p>
-<p>HOME</p>
+</NavLink>
+
+
+
+<NavLink to="/man">
+  <p>MAN</p>
+</NavLink>
+
+
+
+<NavLink to="/kids">
+    <p>KIDS </p>
+</NavLink>
+
+
+
+
+<NavLink to="/mini">
+   <p>MINI-ME</p>
+</NavLink>
+
+
+
+<NavLink to="/">
+  <p>HOME</p>
+</NavLink>
+
+
+
+
+
+
+
 </div>
         </div>
     );
