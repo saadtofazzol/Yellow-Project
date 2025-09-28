@@ -10,9 +10,9 @@ const Navber = () => {
             
             <div className='grid grid-cols-2 mt-10 items-center'>
 
-                <div>
+                <NavLink to="/" >
                 <h1 className='text-4xl ml-8'> Y E L L O W </h1>
-                </div>
+                </NavLink>
 
             <div className='ml-auto mr-10 relative'>
                 <input type="search" placeholder='Search' className='bg-black text-white text-sm p-2 text-bold' />
@@ -38,10 +38,11 @@ const Navber = () => {
 
 
 
-<div>
-<p>Sign In Or Create An Account </p>
-</div>
 
+
+<NavLink to="/register">
+ <p>Sign In Or Create An Account </p>
+</NavLink>
 
 </div>
 

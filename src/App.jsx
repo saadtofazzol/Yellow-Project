@@ -12,6 +12,7 @@ import Woman from "./Pages/Woman"
 import Kids from "./Pages/Kids"
 import MiniMe from "./Pages/MiniMe"
 import ProductPage from "./Home/ProductPage"
+import CreateAccount from "./User/CreateAccount"
 
 
 
@@ -33,6 +34,7 @@ function App() {
   <Route path="/kids" element={<Kids/>} />
   <Route path="/mini" element={<MiniMe/>} />
   <Route path="/product/:id" element={<ProductPage/>} />
+  <Route path="/register" element={<CreateAccount/>} />
   <Route path="*" element={<PageNotFound/>} />
 
 
