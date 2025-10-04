@@ -2,9 +2,12 @@ import React from 'react';
 import { CgShoppingBag } from "react-icons/cg";
 import { CiStop1 } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const Navber = () => {
+
+    const cartItem = useSelector(state => state.cart)
     return (
         <div>
             
@@ -20,13 +23,15 @@ const Navber = () => {
             </div>
 
             </div>
-      
+
+<NavLink to="/shopping-item">
+          
 <div className='flex gap-5 justify-end mr-10 mt-5'>
     <div className='flex items-center  gap-2'>
 <CgShoppingBag />
 
 <p> Shopping Cart</p>
-<p className=' bg-pink-200 w-5  rounded-full text-center'>0</p>
+<p className=' bg-pink-200 w-5  rounded-full text-center'>{cartItem.length}</p>
     </div>
 
 
@@ -46,6 +51,7 @@ const Navber = () => {
 
 </div>
 
+</NavLink>
 
 
 <div className='flex bg-black text-white  gap-10 justify-center p-5 mt-5'>

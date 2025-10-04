@@ -13,6 +13,7 @@ import Kids from "./Pages/Kids"
 import MiniMe from "./Pages/MiniMe"
 import ProductPage from "./Home/ProductPage"
 import CreateAccount from "./User/CreateAccount"
+import ShoppingCart from "./Pages/ShoppingCart"
 
 
 
@@ -35,6 +36,7 @@ function App() {
   <Route path="/mini" element={<MiniMe/>} />
   <Route path="/product/:id" element={<ProductPage/>} />
   <Route path="/register" element={<CreateAccount/>} />
+  <Route path="/shopping-item" element={<ShoppingCart/>} />
   <Route path="*" element={<PageNotFound/>} />
 
 

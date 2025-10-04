@@ -1,13 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addtoCart } from '../redux/cartSlice';
+
 
 const Dataload = () => {
 
 
     const [data,setData] = useState([])
 
-
+    const dispatch = useDispatch()
 
 
     const fetchdata = async() =>{
@@ -37,7 +40,9 @@ fetchdata()
                         <img src={item.image} alt="" srcset="" className='w-50 h-50 m-auto ' />
                         <h1>{item.title}</h1>
                         <p>{item.price}</p>
-                        <button className='bg-green-500 p-3'>
+                         </Link>
+                        <button className='bg-green-500 p-3'
+           onClick={() => dispatch(addtoCart(item))}>
                             Add to Cart 
                         </button>
 
@@ -46,7 +51,7 @@ fetchdata()
                            Buy Now
                         </button>
 
-                        </Link>
+                       
                     </div>
                 ))
             }
