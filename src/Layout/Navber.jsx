@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navber = () => {
 
-    const cartItem = useSelector(state => state.cart)
+    const cartItem = useSelector(state => state.persistedeReducer.cart)
     return (
         <div>
             
