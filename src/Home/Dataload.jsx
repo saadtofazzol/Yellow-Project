@@ -39,7 +39,7 @@ fetchdata()
                         <Link to={`/product/${item.id}`}>
                         <img src={item.image} alt="" srcset="" className='w-50 h-50 m-auto ' />
                         <h1>{item.title}</h1>
-                        <p>{item.price}</p>
+                        <p> {item.price} </p>
                          </Link>
                         <button className='bg-green-500 p-3'
            onClick={() => dispatch(addtoCart(item))}>

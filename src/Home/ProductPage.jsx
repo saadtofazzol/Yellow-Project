@@ -35,7 +35,7 @@ fetchdata()
             </div>
                        
 
-                       <div className='mt-10'>
+                       <div className='mt-10 shadow'>
                          <h1 className='text-3xl  mt-10'>{data.title}</h1>
 
             <h1 className='text-2xl mt-10'>{data.category}</h1>
