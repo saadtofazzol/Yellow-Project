@@ -15,12 +15,30 @@ import { createSlice } from "@reduxjs/toolkit";
 
         deleteCart(state, action){
             return state.filter((item) => item.id != action.payload.id)
+        }, 
+
+        incrementCart:(state, action) =>{
+            const item = state.find((item ) => item.id=== action.payload)
+
+            if(item)
+            {
+                item.quantity++;
+            }
+
+        } ,
+        
+        decreeMentCart :(state, action) =>{
+            const item = state.find((item) => item.id === action.payload)
+
+            if(item && item.quantity > 1 )
+            {
+                item.quantity-=1 ; 
+            }
         }
-       
     }
 })
 
 
-export const {addtoCart,deleteCart} = cartSlice.actions; 
+export const {addtoCart,deleteCart,incrementCart,decreeMentCart} = cartSlice.actions; 
 
 export default cartSlice.reducer;
