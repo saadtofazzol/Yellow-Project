@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { auth } from './FIrebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {  signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
-const CreateAccount = () => {
+const Login = () => {
 
- const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-
+const navigate = useNavigate()
 const handleRegister = async () =>{
     try{
-        await createUserWithEmailAndPassword(auth, email , password)
-        setFirstName('');
-      setLastName('');
+        await signInWithEmailAndPassword(auth, email , password)
+     
       setEmail('');
       setPassword('');
-      console.log("Register Successully")
+      console.log("Login Successully")
+    navigate("/")
     }catch (err){
-
+console.log(err)
     }
 }
 
@@ -32,20 +32,9 @@ const handleRegister = async () =>{
 
 
 <div className='mt-15 w-100 m-auto'>
-<div>
-    <h1 className='text-left'> First Name </h1>
-    <input type="text" className='border-1 active:border-1 w-100 p-2  my-5' onChange={ (e) => setFirstName(e.target.value) }   />
-
-</div>
 
 
 
-
-<div>
-    <h1 className='text-left'> Last name </h1>
-    <input type="text" className='border-1 active:border-1 w-100 p-2  my-5' onChange={ (e) => setLastName(e.target.value) }  />
-
-</div>
 
 
 
@@ -84,4 +73,6 @@ const handleRegister = async () =>{
     );
 };
 
-export default CreateAccount;
+export default Login;
+
+
